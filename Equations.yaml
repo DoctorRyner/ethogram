@@ -1,0 +1,15 @@
+gui-dev: |
+    cd gui
+    ghcid -c "stack ghci gui:lib shared" -r="debugApp" --warnings
+
+gui-build: |
+    cd gui
+    stack build gui
+
+gui-run: |
+    cd gui
+    nohup stack run gui
+
+api-dev: |
+    cd api
+    ghcid -c "stack ghci api:lib shared" -r="runApp" --warnings

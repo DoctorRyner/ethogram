@@ -1,0 +1,7 @@
+sentry:
+    appUrl: https://<key>@sentry.io/<key>"
+
+psql:
+    dbname: <name>
+    username: <name>
+    password: <name>

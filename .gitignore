@@ -1,0 +1,10 @@
+.stack-work/
+*.iml
+*.cabal
+*~
+.idea
+.DS_Store
+ELK
+nohup.out
+api/config/*.yaml
+!api/config/*.example.yaml

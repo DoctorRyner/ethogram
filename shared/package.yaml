@@ -1,0 +1,25 @@
+name:                shared
+
+dependencies:
+- base
+- record-hasfield
+- text
+- miso
+- miso-spa
+- aeson
+- swagger2
+
+ghc-options:
+- -Wall
+- -Wno-name-shadowing
+- -Wno-unused-do-bind
+- -Wno-orphans
+
+default-extensions:
+- OverloadedStrings
+- LambdaCase
+- DeriveGeneric
+- TypeSynonymInstances
+
+library:
+  source-dirs: src
