@@ -24,6 +24,8 @@ dependencies:
 - wai-logger
 - resource-pool
 - postgresql-simple
+- postgresql-simple-migration
+- qm-interpolated-string
 - transformers
 - yaml
 

@@ -3,11 +3,13 @@
 module DB.Init where
 
 import           Config
-import           Control.Exception          (bracket)
+import           Control.Exception                    (bracket)
 import           Data.ByteString
 import           Data.Pool
 import           Database.PostgreSQL.Simple
+import           Database.PostgreSQL.Simple.Migration
 import           DB.Config
+import           DB.Migration
 
 initConnectionPool :: ByteString -> IO (Pool Connection)
 initConnectionPool connStr = createPool (connectPostgreSQL connStr) close
@@ -17,9 +19,9 @@ initConnectionPool connStr = createPool (connectPostgreSQL connStr) close
 
 initDB :: ByteString -> IO ()
 initDB connstr = bracket (connectPostgreSQL connstr) close $ \conn -> do
-  execute_ conn
-    "CREATE TABLE IF NOT EXISTS messages (msg text not null)"
-  return ()
+    withTransaction conn $ runMigration $ MigrationContext (MigrationCommands migration) True conn
+    pure ()
 
 runInitDB :: PostgreSQLConfig -> IO ()
 runInitDB psqlConfig = initDB $ settings psqlConfig
+
