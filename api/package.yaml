@@ -4,7 +4,6 @@ dependencies:
 - base
 - shared
 - record-hasfield
-- record-dot-preprocessor
 - servant
 - servant-server
 - servant-swagger

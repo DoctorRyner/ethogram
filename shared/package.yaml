@@ -7,7 +7,7 @@ dependencies:
 - miso
 - miso-spa
 - aeson
-- swagger2
+# - swagger2
 
 ghc-options:
 - -Wall

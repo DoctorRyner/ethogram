@@ -4,13 +4,12 @@ dependencies:
 - base
 - shared
 - record-hasfield
-- record-dot-preprocessor
 - miso
 - miso-spa
 - miso-styled
 - miso-http
 - clay
-- aeson
+# - aeson
 - jsaddle
 
 ghc-options:
