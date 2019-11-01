@@ -2,6 +2,7 @@
 *.iml
 *.cabal
 *~
+dist-newstyle
 .idea
 .DS_Store
 ELK
