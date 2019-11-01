@@ -5,13 +5,6 @@
 
 packages:
 - completed:
-    hackage: aeson-injector-1.1.2.0@sha256:2220abadf41f42d7ff1a8671560f12280c5066d9462d2d8cecc5f7136e55024b,1695
-    pantry-tree:
-      size: 445
-      sha256: 509263d26ec21f80a12965b52a5050bddcb68c094261f0f9b9e794aa2e485c8a
-  original:
-    hackage: aeson-injector-1.1.2.0
-- completed:
     hackage: raven-haskell-0.1.2.1@sha256:59ab0300183a599650ed5761e3e984ff2934afe1ce6d924d1064876cac90275d,1255
     pantry-tree:
       size: 632
@@ -40,26 +33,26 @@ packages:
   original:
     hackage: jsaddle-dom-0.9.3.2
 - completed:
-    hackage: ref-tf-0.4.0.2@sha256:69de3550250e0cd69f45d080359cb314a9487c915024349c75b78732bbee9332,1134
+    hackage: ghcjs-base-0.2.0.0@sha256:d755c0dc16c2b5fd45e7a1db75f68a1ddaf400b38166fac8194a8c3acc1deae3,6759
     pantry-tree:
-      size: 211
-      sha256: fc5a4a35b4c782a33f452c1dc66ffa8ddbf321e2db369bd8823c796f0d4d8c7f
+      size: 6382
+      sha256: de9f53b305557b551b6ab08b0b6b75bb0909f4d65d26f40a5d71fd9c29cf905f
   original:
-    hackage: ref-tf-0.4.0.2
+    hackage: ghcjs-base-0.2.0.0
 - completed:
     cabal-file:
-      size: 996
-      sha256: 329ac4505b3d0971d3c49648fc2e9f8f69a1e315cafed319c1530d77657563c0
+      size: 943
+      sha256: 849271a2c1cb0a30062e3dc903c9875f8166abc8ca7920c4e0dd7b1b0184e217
     name: miso-spa
     version: '0.1'
     git: https://github.com/DoctorRyner/miso-spa
     pantry-tree:
-      size: 554
-      sha256: 0289c7168dc87a774c4613c7f2f6d8f2e022c93ed0f1f06a92b16535eed6112f
-    commit: 847272c5805812535488b623547f7340823f952d
+      size: 500
+      sha256: e77704ebb7fcb8edfd45a96bc6e61c5f18f8e4edc3865a68af979dc032ee5aa0
+    commit: 932d70038e4409011a2318b9ef968a5507dd6d23
   original:
     git: https://github.com/DoctorRyner/miso-spa
-    commit: 847272c5805812535488b623547f7340823f952d
+    commit: 932d70038e4409011a2318b9ef968a5507dd6d23
 - completed:
     cabal-file:
       size: 782

@@ -1,15 +1,15 @@
 name:                gui
 
 dependencies:
-- base
-- shared
+- base >= 4.7 && < 5
+# - shared
 - record-hasfield
 - miso
 - miso-spa
-- miso-styled
-- miso-http
+# - miso-styled
+# - miso-http
 - clay
-# - aeson
+- aeson
 - jsaddle
 
 ghc-options:
