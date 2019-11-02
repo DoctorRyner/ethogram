@@ -2,7 +2,7 @@
 
 module API where
 
-import Config
+import           Config
 import           Control.Monad.Trans.Class (lift)
 import           Cors
 import           DB.Config
@@ -17,11 +17,15 @@ import           Servant.Swagger.UI
 import           Types
 
 import           Route.Root
+import           Route.Users
 
 type Routes = Route.Root.Type
+         :<|> Route.Users.Type
 
 server :: ServerT API AppM
-server = serverDocs :<|> Route.Root.handler
+server = serverDocs
+    :<|> Route.Root.handler
+    :<|> Route.Users.handler
 
 api :: Proxy API
 api = Proxy

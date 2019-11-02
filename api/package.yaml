@@ -27,11 +27,14 @@ dependencies:
 - qm-interpolated-string
 - transformers
 - yaml
+- miso
+- miso-spa
 
 ghc-options:
 - -Wall
 - -Wno-name-shadowing
 - -Wno-unused-do-bind
+- -Wno-orphans
 
 default-extensions:
 - OverloadedStrings

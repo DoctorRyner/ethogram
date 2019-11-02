@@ -1,15 +1,21 @@
-{-# LANGUAGE QuasiQuotes #-}
+-- {-# LANGUAGE QuasiQuotes #-}
 
 module DB.Migration where
 
 import           Data.ByteString
 import           Database.PostgreSQL.Simple.Migration
-import           Text.InterpolatedString.QM
+--import           Text.InterpolatedString.QM
+
+table :: ByteString -> ByteString
+table = ("CREATE TABLE IF NOT EXISTS " <>) . (<> " (data jsonb);")
+
+tableCustom :: ByteString -> ByteString
+tableCustom = ("CREATE TABLE IF NOT EXISTS " <>) . (<> ";")
 
 migration :: [MigrationCommand]
 migration =
     [ MigrationInitialization
-    , "Init" # [qm|"CREATE TABLE IF NOT EXISTS messages (msg text not null);"|]
+    , "Users" # table "users"
     ]
 
 (#) :: ScriptName -> ByteString -> MigrationCommand
