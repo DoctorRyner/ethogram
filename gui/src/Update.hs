@@ -2,9 +2,9 @@
 
 module Update where
 
+import           Miso.Http as Http
 import           Miso.SPA
 import           Types
-import Miso.Http as Http
 
 update :: Model -> Event -> Effect Event Model
 update model = \case
@@ -16,4 +16,4 @@ update model = \case
     Init -> batchEff model $ map pure [ ReqLocale ]
 
     ReqLocale -> withJS model $ ResLocale <$> Http.send get { Http.url = "/locale/ru.json" }
-    ResLocale resp -> fromResp resp model $ \locale -> model { locale = locale } 
+    ResLocale resp -> fromResp resp model $ \locale -> model { locale = locale }

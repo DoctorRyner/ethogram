@@ -2,12 +2,12 @@ name:                gui
 
 dependencies:
 - base >= 4.7 && < 5
-# - shared
+- shared
 - record-hasfield
 - miso
 - miso-spa
-# - miso-styled
-# - miso-http
+- miso-styled
+- miso-http
 - clay
 - aeson
 - jsaddle
