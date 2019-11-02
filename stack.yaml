@@ -13,7 +13,7 @@ extra-deps:
 - jsaddle-dom-0.9.3.2
 - ref-tf-0.4.0.2
 - git: https://github.com/DoctorRyner/miso-spa
-  commit: 93c51a155ebe3fefadb19e441e46a3ab881a5bcc
+  commit: 8553fe0f789960f2f41950520a12f333c7b22493
 - git: https://github.com/DoctorRyner/miso-styled
   commit: 41b8627d4cfeb50c1d50cb2dc7d64cc44ef35cf4
 - git: https://github.com/DoctorRyner/miso-http

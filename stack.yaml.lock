@@ -48,18 +48,18 @@ packages:
     hackage: ref-tf-0.4.0.2
 - completed:
     cabal-file:
-      size: 1031
-      sha256: f7c130d450cad2d51ed3457b0babd99f1f8637f73a6dff73fce271e1d4f63e95
+      size: 996
+      sha256: 329ac4505b3d0971d3c49648fc2e9f8f69a1e315cafed319c1530d77657563c0
     name: miso-spa
     version: '0.1'
     git: https://github.com/DoctorRyner/miso-spa
     pantry-tree:
-      size: 555
-      sha256: 45c2b4109701ffd36ce9fd4d3896e300f3d47218f13f042bf3fc8967cfb0f7f9
-    commit: 93c51a155ebe3fefadb19e441e46a3ab881a5bcc
+      size: 554
+      sha256: 0177a6a871d04b08109a6b556421fac6925d47562850aea8552d04b6afb4025a
+    commit: 8553fe0f789960f2f41950520a12f333c7b22493
   original:
     git: https://github.com/DoctorRyner/miso-spa
-    commit: 93c51a155ebe3fefadb19e441e46a3ab881a5bcc
+    commit: 8553fe0f789960f2f41950520a12f333c7b22493
 - completed:
     cabal-file:
       size: 782
