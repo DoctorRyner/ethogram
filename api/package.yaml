@@ -1,9 +1,11 @@
 name:                api
 
 dependencies:
-- base
+- base >= 4.7 && < 5
 - shared
-- record-hasfield
+- text
+- bytestring
+- generic-lens
 - servant
 - servant-server
 - servant-swagger
@@ -14,40 +16,36 @@ dependencies:
 - warp
 - wai
 - wai-cors
-- raven-haskell
-- bytestring
-- exceptions
-- fast-logger
-- time
-- text
 - wai-logger
-- resource-pool
-- postgresql-simple
-- postgresql-simple-migration
-- qm-interpolated-string
 - transformers
 - yaml
+- hasql
+- hasql-pool
+- postgresql-simple
+- postgresql-simple-migration
+- time
 - miso
-- miso-spa
 
 ghc-options:
 - -Wall
 - -Wno-name-shadowing
 - -Wno-unused-do-bind
-- -Wno-orphans
+- -Werror=incomplete-patterns
 
 default-extensions:
+- DeriveGeneric
+- DuplicateRecordFields
+- OverloadedLabels
 - OverloadedStrings
 - LambdaCase
 - DataKinds
 - TypeOperators
-- DeriveGeneric
 
 library:
   source-dirs: src
 
 executables:
-  api:
+  api-exe:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

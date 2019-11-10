@@ -1,23 +1,18 @@
-{-# OPTIONS_GHC -F -pgmF=record-dot-preprocessor #-}
-
 module Types where
 
 import           Config
 import           Control.Monad.Trans.Reader
-import           Data.Pool
-import           Database.PostgreSQL.Simple
+import           GHC.Generics
+import           Hasql.Pool
 import           Servant
 
 data State = State
-    { pool   :: Pool Connection
-    , config :: Config
-    }
+    { config :: Config
+    , pool   :: Pool
+    } deriving Generic
 
-mkState :: Pool Connection -> Config -> State
-mkState pool config = State
-    { pool = pool
-    , config = config
-    }
+mkState :: Config -> Pool -> State
+mkState = State
 
 type AppM = ReaderT State Handler
 

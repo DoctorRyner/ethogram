@@ -1,15 +1,15 @@
--- {-# LANGUAGE QuasiQuotes #-}
-
 module DB.Migration where
 
-import           Data.ByteString
-import           Database.PostgreSQL.Simple.Migration
+import qualified Data.ByteString                      as BS
 --import           Text.InterpolatedString.QM
+import           Control.Exception
+import           Database.PostgreSQL.Simple
+import           Database.PostgreSQL.Simple.Migration
 
-table :: ByteString -> ByteString
+table :: BS.ByteString -> BS.ByteString
 table = ("CREATE TABLE IF NOT EXISTS " <>) . (<> " (data jsonb);")
 
-tableCustom :: ByteString -> ByteString
+tableCustom :: BS.ByteString -> BS.ByteString
 tableCustom = ("CREATE TABLE IF NOT EXISTS " <>) . (<> ";")
 
 migration :: [MigrationCommand]
@@ -18,5 +18,10 @@ migration =
     , "Users" # table "users"
     ]
 
-(#) :: ScriptName -> ByteString -> MigrationCommand
+(#) :: ScriptName -> BS.ByteString -> MigrationCommand
 (#) = MigrationScript
+
+initDB :: BS.ByteString -> IO ()
+initDB connstr = bracket (connectPostgreSQL connstr) close $ \conn -> do
+    withTransaction conn $ runMigration $ MigrationContext (MigrationCommands migration) True conn
+    pure ()

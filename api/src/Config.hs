@@ -1,27 +1,30 @@
-{-# OPTIONS_GHC -F -pgmF=record-dot-preprocessor #-}
+{-# OPTIONS_GHC -Wno-orphans #-}
 
 module Config where
 
+import           Data.ByteString
+import           Data.Generics.Labels ()
+import           Data.Text.Encoding
+import           Data.Time
 import           Data.Yaml
 import           GHC.Generics
 
 data PostgreSQLConfig = PostgreSQLConfig
     { dbname
     , username
-    , password :: String
+    , password                   :: ByteString
+    , poolSize                   :: Int
+    , poolConnectionTimeoutInSec :: NominalDiffTime
     } deriving Generic
+
+instance FromJSON ByteString where
+    parseJSON = withText "ByteString" $ pure . encodeUtf8
+    {-# INLINE parseJSON #-}
 
 instance FromJSON PostgreSQLConfig
 
-newtype SentryConfig = SentryConfig
-    { appUrl :: String
-    } deriving Generic
-
-instance FromJSON SentryConfig
-
-data Config = Config
-    { sentry :: SentryConfig
-    , psql   :: PostgreSQLConfig
+newtype Config = Config
+    { psql :: PostgreSQLConfig
     } deriving Generic
 
 instance FromJSON Config

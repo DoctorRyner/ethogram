@@ -1,24 +1,32 @@
 name:                shared
 
 dependencies:
-- base
-- record-hasfield
+- base >= 4.7 && < 5
 - text
+- generic-lens
 - miso
 - miso-spa
 - aeson
 
+when:
+- condition: impl(ghcjs)
+  then:
+    dependencies: []
+  else:
+    dependencies:
+    - swagger2
+
 ghc-options:
 - -Wall
 - -Wno-name-shadowing
-- -Wno-unused-do-bind
-- -Wno-orphans
+- -Werror=incomplete-patterns
 
 default-extensions:
+- DeriveGeneric
+- DuplicateRecordFields
+- OverloadedLabels
 - OverloadedStrings
 - LambdaCase
-- DeriveGeneric
-- TypeSynonymInstances
 
 library:
   source-dirs: src

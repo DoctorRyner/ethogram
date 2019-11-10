@@ -1,5 +1,3 @@
-{-# OPTIONS_GHC -F -pgmF=record-dot-preprocessor #-}
-
 module Update where
 
 import           Miso.Http as Http
@@ -15,5 +13,5 @@ update model = \case
 
     Init -> batchEff model $ map pure [ ReqLocale ]
 
-    ReqLocale -> withJS model $ ResLocale <$> Http.send get { Http.url = "/locale/ru.json" }
+    ReqLocale -> withJS model $ ResLocale <$> Http.send get { url = "/locale/ru.json" }
     ResLocale resp -> fromResp resp model $ \locale -> model { locale = locale }

@@ -19,13 +19,13 @@ app = do
         , mountPoint      = Nothing
         }
 
-runApp' :: Bool -> IO ()
-runApp' isDebugMode = do
+runAppCustom :: Bool -> IO ()
+runAppCustom isDebugMode = do
     putStrLn "Frontend = http://localhost:8000"
     (if isDebugMode then debug else run) 8000 $ startApp =<< app
 
 runApp :: IO ()
-runApp = runApp' False
+runApp = runAppCustom False
 
 debugApp :: IO ()
-debugApp = runApp' True
+debugApp = runAppCustom True

@@ -48,6 +48,20 @@ packages:
     hackage: ref-tf-0.4.0.2
 - completed:
     cabal-file:
+      size: 2799
+      sha256: 6ca4cc6c89834bb79eb9f15b504774043b5b3994336bd86a9d79e59da6d54963
+    name: hasql-migration
+    version: 0.3.0
+    git: https://github.com/tvh/hasql-migration
+    pantry-tree:
+      size: 689
+      sha256: 70342dc8dc7d388695d33793d6147cce80de6af54583f4916f4c250686fc249d
+    commit: 58c90f7c5c0e829708c35db9d2c8bc47e86621eb
+  original:
+    git: https://github.com/tvh/hasql-migration
+    commit: 58c90f7c5c0e829708c35db9d2c8bc47e86621eb
+- completed:
+    cabal-file:
       size: 996
       sha256: 329ac4505b3d0971d3c49648fc2e9f8f69a1e315cafed319c1530d77657563c0
     name: miso-spa
@@ -90,7 +104,7 @@ packages:
     commit: ca7d070fabb1656137c4abe9d2d7234ca605bdf5
 snapshots:
 - completed:
-    size: 545658
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/12.yaml
-    sha256: 26b807457213126d26b595439d705dc824dbb7618b0de6b900adc2bf6a059406
-  original: lts-14.12
+    size: 525876
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/14/13.yaml
+    sha256: 4a0e79eb194c937cc2a1852ff84d983c63ac348dc6bad5f38d20cab697036eef
+  original: lts-14.13

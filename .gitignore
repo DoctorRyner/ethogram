@@ -1,11 +1,10 @@
 .stack-work/
-*.iml
 *.cabal
+*.iml
+.idea
 *~
 dist-newstyle
-.idea
 .DS_Store
-ELK
 nohup.out
 api/config/*.yaml
 !api/config/*.example.yaml
